@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="web_dashboard" name="shell-type"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Source+Sans+3:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        background-color: #F8FAFC;
+        color: #1E293B;
+      }
+      body { overscroll-behavior: none; }
+    }
+    ::-webkit-scrollbar { display: none; }
+  </style>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#F8FAFC",
+            "surface-card": "#FFFFFF",
+            "primary": "#004ac6",
+            "primary-container": "#2563eb",
+            "primary-subtle": "#EEF5FB",
+            "border-subtle": "#E2E8F0",
+            "border-light": "#F1F5F9",
+            "text-main": "#0F172A",
+            "text-muted": "#64748B",
+            "text-secondary": "#475569",
+            "success-subtle": "#ECFDF5",
+            "success-text": "#047857",
+            "warning-subtle": "#FFFBEB",
+            "warning-border": "#FDE68A",
+            "warning-text": "#B45309",
+            "danger-subtle": "#FEF2F2",
+            "danger-text": "#B91C1C",
+          },
+          fontFamily: {
+            sans: ['"Source Sans 3"', 'sans-serif'],
+            display: ['"Hanken Grotesk"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-surface text-text-main font-sans antialiased min-h-screen">
+<!-- Left Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-card border-r border-border-subtle z-50 flex flex-col justify-between shadow-[1px_0_12px_rgba(0,0,0,0.02)]">
+<div class="flex flex-col flex-1 min-h-0">
+<!-- Logo Branding -->
+<div class="h-20 px-6 flex items-center gap-3.5 border-b border-border-subtle/60">
+<img alt="GeoStratum Intelligence Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDVsRRuCp_0Ny7xEXXTBl5zna2laolg77SaTkiAFOvzFY97Ck8x8AmADWdPnzllq5pUK_LWg2AOLhzNXiGwavRBr6LzXxYhZc6xBvdZUcygyyhroPH6fZ5Iay1TGDe8mZEZWm_9VhW48tfIogLX6pb5qNFLSz01cuHIfY8BNPBiCdlVzSfa0SWbVFwid4dCKGgHIVBHRI-VQn65vpHuyo_kFXEOrDw6IpwkoAeBuyguWg"/>
+<div class="flex flex-col">
+<span class="font-display font-semibold text-[17px] text-text-main tracking-tight leading-tight">GeoStratum</span>
+<span class="font-mono text-[10px] text-text-muted font-medium uppercase tracking-wider">CMPDI · Coal India AI</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="overflow-y-auto flex-1 px-4 py-6 space-y-7">
+<div>
+<div class="px-3 mb-2.5">
+<span class="font-mono text-[10.5px] uppercase tracking-wider text-text-muted font-medium">Core Workspace</span>
+</div>
+<nav class="space-y-1">
+<a aria-current="page" class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl bg-primary-subtle text-primary font-medium transition-colors" data-path="main-dashboard" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="text-[15px]">Main Dashboard</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="document-repository" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+<span class="text-[15px]">Document Repository</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="upload-documents" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">cloud_upload</span>
+<span class="text-[15px]">Upload Documents</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="ai-assistant" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+<span class="text-[15px]">AI Assistant</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="document-preview-&amp;-extraction" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+<span class="text-[15px]">Data Extraction</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="verification-center" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">fact_check</span>
+<span class="text-[15px]">Verification Center</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-mono font-medium">3</span>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="report-generator" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">summarize</span>
+<span class="text-[15px]">Report Generator</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="analytics-&amp;-insights" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+<span class="text-[15px]">Analytics &amp; Insights</span>
+</div>
+</a>
+</nav>
+</div>
+<div>
+<div class="px-3 mb-2.5">
+<span class="font-mono text-[10.5px] uppercase tracking-wider text-text-muted font-medium">Administration</span>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="user-management" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">group</span>
+<span class="text-[15px]">User Management</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="audit-logs" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">shield_check</span>
+<span class="text-[15px]">Audit Logs</span>
+</div>
+</a>
+<a class="flex items-center justify-between min-h-[42px] px-3.5 py-2 rounded-xl text-text-secondary hover:bg-slate-50 hover:text-text-main transition-colors" data-path="settings-&amp;-help" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span class="text-[15px]">Settings</span>
+</div>
+</a>
+</nav>
+</div>
+</div>
+</div>
+<!-- User Profile Footer -->
+<div class="p-4 border-t border-border-subtle bg-slate-50/50">
+<div class="flex items-center gap-3">
+<img alt="Profile" class="w-10 h-10 rounded-full object-cover shrink-0 ring-1 ring-border-subtle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_iIuOeRHMuDs2XO7Wf0QGasfJRW26O0KRHJAJzNn4OsrgNK_Ruj7U1H3eEwhtSDAUhHV8NY0-U5ww0VqMZyx0zhoCXcFDhT2qrIIJfguEWmrLoHBkc0Qs95WsskS2JKAcPTD5LlYJipqV5HHth7xeQgHIXjKlMbAvfWwVYfh7Ufa55O-p6vNWkJWOI2VcYebyI0-oHW-p1xEOQzbaCXxCDVzjgUm-g4kJrDd-aGxC"/>
+<div class="flex-1 min-w-0">
+<p class="font-display font-medium text-[14px] text-text-main truncate leading-snug">Dr. Rajeshwar Sharma</p>
+<p class="text-[12px] text-text-muted truncate">CGM (Geology) · Ranchi</p>
+</div>
+<button class="w-8 h-8 flex items-center justify-center text-text-muted hover:text-danger-text rounded-lg transition-colors" title="Log out" type="button">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper with Pl-72 -->
+<div class="pl-72 min-h-screen flex flex-col">
+<!-- Clean, uncluttered Top Navigation -->
+<header class="sticky top-0 h-16 bg-surface-card/95 backdrop-blur-md z-40 border-b border-border-subtle flex items-center justify-between px-8">
+<!-- Search Input -->
+<div class="relative w-full max-w-lg">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-text-muted">
+<span class="material-symbols-outlined text-[19px]">search</span>
+</div>
+<input class="w-full h-10 pl-10 pr-4 bg-slate-50 border border-border-subtle rounded-xl text-[14px] text-text-main placeholder:text-text-muted focus:outline-none focus:bg-white focus:border-primary transition-all" placeholder="Search 142,500+ drill cores, borehole logs, feasibility memoirs..." type="text"/>
+</div>
+<!-- Header Right Utilities -->
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center gap-2 text-xs font-mono text-text-muted bg-slate-100/70 px-3 py-1.5 rounded-full border border-border-subtle">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+<span>CMPDI Central Node Connected</span>
+</div>
+<button class="w-9 h-9 relative flex items-center justify-center rounded-xl text-text-muted hover:text-text-main hover:bg-slate-100 transition-colors" type="button">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-amber-500"></span>
+</button>
+<a class="inline-flex items-center gap-2 px-3.5 py-2 text-[14px] font-medium text-text-secondary hover:text-text-main rounded-xl hover:bg-slate-100 transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">help_outline</span>
+<span class="hidden sm:inline">Support</span>
+</a>
+</div>
+</header>
+<!-- Spacious Main Canvas Container -->
+<main class="flex-1 w-full max-w-7xl mx-auto px-8 py-10">
+<!-- 1. WELCOME & ACTION BAR -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-10 pb-2">
+<div class="space-y-1.5 max-w-2xl">
+<h1 class="font-display text-[30px] font-bold text-text-main tracking-tight leading-snug">
+            Good morning, Dr. Rajeshwar Sharma
+          </h1>
+<p class="text-[16px] text-text-muted leading-relaxed">
+            Here is your geological intelligence overview across Coal India subsidiaries and active mining blocks.
+          </p>
+</div>
+<div class="flex flex-wrap items-center gap-3 shrink-0">
+<button class="min-h-[44px] px-5 inline-flex items-center gap-2 rounded-xl bg-primary text-white text-[15px] font-medium hover:bg-primary-container shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-primary/20" type="button">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>Upload Report</span>
+</button>
+<button class="min-h-[44px] px-4 inline-flex items-center gap-2 rounded-xl bg-surface-card border border-border-subtle text-text-main text-[15px] font-medium hover:bg-slate-50 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">psychology</span>
+<span>Ask AI Assistant</span>
+</button>
+<button class="min-h-[44px] px-4 inline-flex items-center gap-2 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-[15px] font-medium hover:bg-amber-100/70 transition-all" type="button">
+<span class="material-symbols-outlined text-[19px] text-amber-700">warning</span>
+<span>Review Discrepancies (3)</span>
+</button>
+</div>
+</section>
+<!-- 2. KPI METRICS CARDS (Clean, generous padding, uncrowded) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+<!-- Card 1 -->
+<div class="bg-surface-card rounded-2xl p-7 border border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[13px] font-mono font-medium uppercase tracking-wider text-text-muted">Repository Archive</span>
+<div class="w-9 h-9 rounded-xl bg-blue-50 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">folder_copy</span>
+</div>
+</div>
+<div>
+<div class="font-display text-[32px] font-bold text-text-main tracking-tight leading-none mb-2">142,850</div>
+<p class="text-[14px] text-text-muted mb-4">Total Archived Documents</p>
+<div class="pt-3 border-t border-border-light flex items-center text-[13px] text-emerald-700 font-medium">
+<span class="material-symbols-outlined text-[16px] mr-1">trending_up</span>
+<span>+1,240 this month</span>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-card rounded-2xl p-7 border border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[13px] font-mono font-medium uppercase tracking-wider text-text-muted">AI Extraction</span>
+<div class="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">task_alt</span>
+</div>
+</div>
+<div>
+<div class="font-display text-[32px] font-bold text-text-main tracking-tight leading-none mb-2">138,420</div>
+<p class="text-[14px] text-text-muted mb-4">AI Processed &amp; Geocoded</p>
+<div class="pt-3 border-t border-border-light flex items-center text-[13px] text-text-muted">
+<span class="font-medium text-emerald-700 mr-1.5">96.9%</span>
+<span>indexed rate · 98.4% OCR</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-card rounded-2xl p-7 border border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[13px] font-mono font-medium uppercase tracking-wider text-text-muted">Sign-Off Workflow</span>
+<div class="w-9 h-9 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">pending_actions</span>
+</div>
+</div>
+<div>
+<div class="font-display text-[32px] font-bold text-text-main tracking-tight leading-none mb-2">3,840</div>
+<p class="text-[14px] text-text-muted mb-4">Pending Verification</p>
+<div class="pt-3 border-t border-border-light flex items-center justify-between text-[13px]">
+<span class="text-text-muted">42 assigned to you</span>
+<a class="text-primary font-medium hover:underline flex items-center gap-0.5" href="#">Queue →</a>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-card rounded-2xl p-7 border border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.03)] hover:border-slate-300 transition-all flex flex-col justify-between">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[13px] font-mono font-medium uppercase tracking-wider text-text-muted">Data Integrity</span>
+<div class="w-9 h-9 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">rule</span>
+</div>
+</div>
+<div>
+<div class="font-display text-[32px] font-bold text-rose-600 tracking-tight leading-none mb-2">3</div>
+<p class="text-[14px] text-text-muted mb-4">Urgent Conflicts Flagged</p>
+<div class="pt-3 border-t border-border-light flex items-center justify-between text-[13px]">
+<span class="text-rose-700 font-medium">Jharia &amp; Karanpura</span>
+<a class="text-rose-700 font-medium hover:underline flex items-center gap-0.5" href="#">Review →</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. DIGNIFIED ACTION REQUIRED BANNER -->
+<section class="mb-10">
+<div class="bg-warning-subtle border border-warning-border rounded-2xl p-6 md:p-7 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-sm">
+<div class="flex items-start gap-4 max-w-3xl">
+<div class="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-700 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">flag</span>
+</div>
+<div class="space-y-1">
+<div class="flex items-center gap-2.5">
+<span class="text-[12px] font-mono font-semibold uppercase tracking-wider text-amber-800 bg-amber-200/60 px-2 py-0.5 rounded">Action Required</span>
+<span class="text-[13px] text-amber-800 font-medium">Priority 1 Review</span>
+</div>
+<p class="text-[15px] text-slate-800 leading-relaxed pt-1">
+<strong>North Karanpura Seam IV</strong> thickness divergence: <span class="font-semibold text-slate-900">14.20m</span> reported in CMPDI Exploration Memoir vs <span class="font-semibold text-amber-900">11.80m</span> in CCL Production Log. Needs CGM approval before DGMS submission.
+              </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0 self-end md:self-center">
+<a class="text-[14px] font-medium text-amber-900 hover:text-black hover:underline px-3 py-2" href="#">
+              View Borehole Log
+            </a>
+<button class="min-h-[42px] px-5 rounded-xl bg-amber-700 hover:bg-amber-800 text-white font-medium text-[14px] transition-colors shadow-sm" type="button">
+              Resolve Conflict
+            </button>
+</div>
+</div>
+</section>
+<!-- 4. RECENT GEOLOGICAL DOCUMENTS TABLE -->
+<section class="mb-10">
+<div class="bg-surface-card rounded-2xl border border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.03)] overflow-hidden">
+<!-- Table Header / Controls -->
+<div class="p-6 md:p-7 border-b border-border-subtle flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<h2 class="font-display text-[20px] font-bold text-text-main tracking-tight">Recent Geological Ingestions</h2>
+<p class="text-[14px] text-text-muted mt-0.5">Synchronized drill logs, feasibility memoirs, and subsidiary datasets</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="h-9 px-3.5 rounded-xl border border-border-subtle bg-slate-50 text-text-secondary hover:bg-white text-[13px] font-medium flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+<span>Filter Subsidiary</span>
+</button>
+<button class="h-9 px-3.5 rounded-xl border border-border-subtle bg-slate-50 text-primary hover:bg-white text-[13px] font-medium flex items-center gap-1 transition-colors" type="button">
+<span>View Full Archive</span>
+</button>
+</div>
+</div>
+<!-- The Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-slate-50/70 border-b border-border-subtle text-text-muted font-mono text-[11.5px] uppercase tracking-wider">
+<th class="py-4 px-6 font-medium">Document Name &amp; ID</th>
+<th class="py-4 px-6 font-medium">Mine &amp; Subsidiary</th>
+<th class="py-4 px-6 font-medium">Category</th>
+<th class="py-4 px-6 font-medium">Upload Date</th>
+<th class="py-4 px-6 font-medium">Status</th>
+<th class="py-4 px-6 text-right font-medium">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light text-[14.5px]">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[19px]">picture_as_pdf</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-text-main block truncate max-w-sm">Borehole Core Lithology Log BH-SECL-2024-88</span>
+<span class="text-[12px] font-mono text-text-muted">CMPDI-RI-V-BILASPUR · 32 MB</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-text-secondary">
+<div class="font-medium text-text-main">Kusmunda OCP</div>
+<div class="text-[12px] text-text-muted">SECL Subsidiary</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-text-secondary text-[12px] font-medium">
+                      Core Log
+                    </span>
+</td>
+<td class="py-4 px-6 text-text-muted text-[13.5px]">Today, 08:30 AM</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[12.5px] font-medium border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified
+                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-primary-container font-medium text-[13.5px] hover:underline px-2 py-1" type="button">
+                      Extract
+                    </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[19px]">layers</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-text-main block truncate max-w-sm">Stratigraphic Cross-Section Amritdhara Upper Seam</span>
+<span class="text-[12px] font-mono text-text-muted">CMPDI-RI-IV-NAGPUR · 48 MB</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-text-secondary">
+<div class="font-medium text-text-main">Amritdhara Seam</div>
+<div class="text-[12px] text-text-muted">WCL Subsidiary</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-text-secondary text-[12px] font-medium">
+                      Stratigraphy
+                    </span>
+</td>
+<td class="py-4 px-6 text-text-muted text-[13.5px]">Yesterday, 18:40</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[12.5px] font-medium border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified
+                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-primary-container font-medium text-[13.5px] hover:underline px-2 py-1" type="button">
+                      Extract
+                    </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[19px]">warning</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-text-main block truncate max-w-sm">Borehole Log MD-UG-09 Methane Drainage</span>
+<span class="text-[12px] font-mono text-text-muted">CMPDI-RI-II-DHANBAD · 16 MB</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-text-secondary">
+<div class="font-medium text-text-main">Moonidih UG Mine</div>
+<div class="text-[12px] text-text-muted">BCCL Subsidiary</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-text-secondary text-[12px] font-medium">
+                      Gas Desorption
+                    </span>
+</td>
+<td class="py-4 px-6 text-text-muted text-[13.5px]">24 Oct 2024</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 text-[12.5px] font-medium border border-amber-200">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Needs Review
+                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-amber-800 hover:text-amber-950 font-medium text-[13.5px] hover:underline px-2 py-1" type="button">
+                      Compare
+                    </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50/60 transition-colors">
+<td class="py-4 px-6">
+<div class="flex items-center gap-3.5">
+<div class="w-8 h-8 rounded-lg bg-blue-50 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[19px]">assignment</span>
+</div>
+<div class="min-w-0">
+<span class="font-medium text-text-main block truncate max-w-sm">Ashok Extension Geological Feasibility Vol. 2</span>
+<span class="text-[12px] font-mono text-text-muted">CMPDI-RI-III-RANCHI · 104 MB</span>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-text-secondary">
+<div class="font-medium text-text-main">Ashok OCP</div>
+<div class="text-[12px] text-text-muted">CCL Subsidiary</div>
+</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 text-text-secondary text-[12px] font-medium">
+                      Feasibility
+                    </span>
+</td>
+<td class="py-4 px-6 text-text-muted text-[13.5px]">23 Oct 2024</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[12.5px] font-medium border border-emerald-100">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Verified
+                    </span>
+</td>
+<td class="py-4 px-6 text-right">
+<button class="text-primary hover:text-primary-container font-medium text-[13.5px] hover:underline px-2 py-1" type="button">
+                      Extract
+                    </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Spacious, uncrowded pagination footer -->
+<div class="px-6 py-4 border-t border-border-subtle bg-slate-50/50 flex flex-col sm:flex-row items-center justify-between gap-3 text-text-muted text-[13px]">
+<span>Showing 4 of 1,240 records updated this month</span>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle bg-white text-text-secondary hover:bg-slate-50 font-medium transition-colors disabled:opacity-50" disabled="" type="button">
+                Previous
+              </button>
+<span class="px-2 font-mono text-xs text-text-secondary">Page 1 of 310</span>
+<button class="px-3 py-1.5 rounded-lg border border-border-subtle bg-white text-text-secondary hover:bg-slate-50 font-medium transition-colors" type="button">
+                Next
+              </button>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. TWO BALANCED, AIRY CARDS SIDE-BY-SIDE (Monthly Ingestion & Repositories) -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-6">
+<!-- Left: Monthly Ingestion Activity -->
+<div class="bg-surface-card rounded-2xl p-7 border border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-6">
+<div>
+<h3 class="font-display text-[18px] font-bold text-text-main">Monthly Ingestion Activity</h3>
+<p class="text-[14px] text-text-muted mt-0.5">Archive volume growth over the past 12 months</p>
+</div>
+<div class="flex items-center gap-1 text-[13px] font-mono text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">
+<span class="material-symbols-outlined text-[15px]">trending_up</span>
+<span>+14.2% YoY</span>
+</div>
+</div>
+<!-- Clean, Airy Ingestion Bar Chart -->
+<div class="w-full pt-4 pb-2">
+<div class="h-44 flex items-end justify-between gap-2.5 px-2">
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 48%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Nov</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 52%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Dec</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 42%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Jan</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 60%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Feb</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 68%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Mar</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 72%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Apr</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 65%;"></div>
+<span class="text-[11px] font-mono text-text-muted">May</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 78%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Jun</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 82%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Jul</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-slate-200/80 rounded-t-md hover:bg-primary/40 transition-colors" style="height: 76%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Aug</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary/70 rounded-t-md hover:bg-primary transition-colors" style="height: 88%;"></div>
+<span class="text-[11px] font-mono text-text-muted">Sep</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2">
+<div class="w-full bg-primary rounded-t-md shadow-sm" style="height: 96%;"></div>
+<span class="text-[11px] font-mono font-bold text-primary">Oct</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-5 border-t border-border-light flex items-center justify-between text-[13.5px]">
+<span class="text-text-muted">October ingest velocity: <strong class="text-text-main font-semibold">14,280 files</strong></span>
+<span class="text-text-muted">System load: <strong class="text-emerald-700 font-semibold">Optimal</strong></span>
+</div>
+</div>
+<!-- Right: Frequently Accessed Repositories -->
+<div class="bg-surface-card rounded-2xl p-7 border border-border-subtle shadow-[0_1px_3px_rgba(0,0,0,0.03)] flex flex-col justify-between">
+<div>
+<div class="flex items-start justify-between mb-6">
+<div>
+<h3 class="font-display text-[18px] font-bold text-text-main">Frequently Accessed Repositories</h3>
+<p class="text-[14px] text-text-muted mt-0.5">Quick access to specialized CIL geological catalogs</p>
+</div>
+<a class="text-[13px] font-medium text-primary hover:underline" href="#">View All</a>
+</div>
+<!-- Spacious 2x2 Clean Tiles -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Tile 1 -->
+<a class="p-4 rounded-xl border border-border-subtle bg-slate-50/50 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all group block" href="#">
+<div class="w-9 h-9 rounded-lg bg-blue-50 text-primary flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<h4 class="font-display font-semibold text-[15px] text-text-main group-hover:text-primary transition-colors">Geological Memoirs</h4>
+<p class="text-[13px] text-text-muted mt-0.5">45,210 exploration files</p>
+</a>
+<!-- Tile 2 -->
+<a class="p-4 rounded-xl border border-border-subtle bg-slate-50/50 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all group block" href="#">
+<div class="w-9 h-9 rounded-lg bg-amber-50 text-amber-700 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+</div>
+<h4 class="font-display font-semibold text-[15px] text-text-main group-hover:text-amber-800 transition-colors">Borehole Core Logs</h4>
+<p class="text-[13px] text-text-muted mt-0.5">28,150 stratigraphy files</p>
+</a>
+<!-- Tile 3 -->
+<a class="p-4 rounded-xl border border-border-subtle bg-slate-50/50 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all group block" href="#">
+<div class="w-9 h-9 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+<h4 class="font-display font-semibold text-[15px] text-text-main group-hover:text-emerald-800 transition-colors">Mine Reserves &amp; Stripping</h4>
+<p class="text-[13px] text-text-muted mt-0.5">31,400 survey sets</p>
+</a>
+<!-- Tile 4 -->
+<a class="p-4 rounded-xl border border-border-subtle bg-slate-50/50 hover:bg-white hover:border-slate-300 hover:shadow-sm transition-all group block" href="#">
+<div class="w-9 h-9 rounded-lg bg-purple-50 text-purple-700 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[20px]">eco</span>
+</div>
+<h4 class="font-display font-semibold text-[15px] text-text-main group-hover:text-purple-800 transition-colors">Environmental Clearances</h4>
+<p class="text-[13px] text-text-muted mt-0.5">12,400 DGMS submissions</p>
+</a>
+</div>
+</div>
+<div class="mt-6 pt-5 border-t border-border-light flex items-center justify-between text-[13px] text-text-muted">
+<span>Last catalog synchronization: Today, 08:30 AM</span>
+<span class="font-mono text-xs">8 Subsidiaries</span>
+</div>
+</div>
+</section>
+</main>
+</div>
+</body></html>

@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=JetBrains+Mono:wght@100..900&family=Source+Sans+3:wght@100..900&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-tertiary-fixed":"#2f1500","on-surface-variant":"#434655","on-background":"#111c2d","on-tertiary":"#ffffff","on-secondary":"#ffffff","on-surface":"#111c2d","on-primary-fixed":"#00174b","on-error":"#ffffff","tertiary-fixed":"#ffdcc3","surface-tint":"#0053db","surface-variant":"#d8e3fb","tertiary-fixed-dim":"#ffb77d","secondary":"#006d30","surface-dim":"#cfdaf2","on-error-container":"#93000a","on-tertiary-fixed-variant":"#6e3900","surface-container-high":"#dee8ff","on-primary-fixed-variant":"#003ea8","secondary-fixed":"#95f8a7","on-tertiary-container":"#ffede1","surface-bright":"#f9f9ff","surface-container-low":"#f0f3ff","secondary-container":"#92f5a4","surface-container-lowest":"#ffffff","surface":"#f9f9ff","inverse-surface":"#263143","inverse-on-surface":"#ecf1ff","on-secondary-fixed-variant":"#005323","surface-container-highest":"#d8e3fb","inverse-primary":"#b4c5ff","primary-fixed-dim":"#b4c5ff","on-primary":"#ffffff","outline-variant":"#c3c6d7","primary-fixed":"#dbe1ff","outline":"#737686","primary-container":"#2563eb","primary":"#004ac6","background":"#f9f9ff","tertiary-container":"#a65900","secondary-fixed-dim":"#79db8d","on-secondary-container":"#007233","tertiary":"#824500","on-primary-container":"#eeefff","error":"#ba1a1a","on-secondary-fixed":"#00210a","surface-container":"#e7eeff","error-container":"#ffdad6"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","gutter-lg":"2rem","space-xl":"2.5rem","space-lg":"1.5rem","space-md":"1rem","gutter-sm":"1rem","margin":"2rem","space-sm":"0.5rem","margin-mobile":"1rem","margin-tablet":"1.5rem","space-xs":"0.25rem"},"fontFamily":{"headline-md":["Hanken Grotesk"],"headline-xl-mobile":["Hanken Grotesk"],"body-md":["\"Source Sans 3\""],"headline-lg":["Hanken Grotesk"],"headline-sm":["Hanken Grotesk"],"label-md":["JetBrains Mono"],"label-lg":["JetBrains Mono"],"headline-lg-mobile":["Hanken Grotesk"],"body-xl":["\"Source Sans 3\""],"headline-xl":["Hanken Grotesk"],"label-sm":["JetBrains Mono"],"body-sm":["\"Source Sans 3\""],"body-lg":["\"Source Sans 3\""]},"fontSize":{"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.015em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"500"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-xl":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"500"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}]}}}};</script></head><body class="bg-surface text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-80 bg-surface-container-lowest z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col flex-1 min-h-0"><div class="h-20 px-space-lg flex items-center gap-space-md bg-surface-container-low/50"><img alt="GeoStratum Intelligence Logo" class="h-9 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrDVsRRuCp_0Ny7xEXXTBl5zna2laolg77SaTkiAFOvzFY97Ck8x8AmADWdPnzllq5pUK_LWg2AOLhzNXiGwavRBr6LzXxYhZc6xBvdZUcygyyhroPH6fZ5Iay1TGDe8mZEZWm_9VhW48tfIogLX6pb5qNFLSz01cuHIfY8BNPBiCdlVzSfa0SWbVFwid4dCKGgHIVBHRI-VQn65vpHuyo_kFXEOrDw6IpwkoAeBuyguWg"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface leading-tight tracking-tight">GeoStratum</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium uppercase tracking-wider">CMPDI · Coal India AI</span></div></div><div class="overflow-y-auto flex-1 px-space-md py-space-md"><div class="px-space-sm mb-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Operations & Core Models</span></div><nav class="space-y-1" data-active-classes="bg-surface-container-high text-primary font-semibold"><a aria-current="page" class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl transition-colors bg-surface-container-high text-primary font-semibold" data-path="main-dashboard" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">grid_view</span><span class="font-body-lg text-body-lg">Main Dashboard</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="document-repository" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">folder_data</span><span class="font-body-lg text-body-lg">Document Repository</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="upload-documents" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">upload_file</span><span class="font-body-lg text-body-lg">Upload Documents</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="ai-assistant" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">psychology</span><span class="font-body-lg text-body-lg">AI Assistant</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="document-preview-&-extraction" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">layers</span><span class="font-body-lg text-body-lg">Document Preview & Extraction</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="verification-center" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">rule</span><span class="font-body-lg text-body-lg">Verification Center</span></div><span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">3 Conflicts</span></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="report-generator" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">summarize</span><span class="font-body-lg text-body-lg">Report Generator</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="analytics-&-insights" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">insights</span><span class="font-body-lg text-body-lg">Analytics & Insights</span></div></a><div class="pt-space-sm pb-space-xs px-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Governance</span></div><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="user-management" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">group</span><span class="font-body-lg text-body-lg">User Management</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="audit-logs" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">verified</span><span class="font-body-lg text-body-lg">Audit Logs</span></div></a><a class="flex items-center justify-between min-h-[44px] px-space-md py-2 rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="settings-&-help" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-body-lg text-body-lg">Settings & Help</span></div></a></nav></div></div><div class="p-space-md bg-surface-container-low/60 m-space-sm rounded-xl"><div class="flex items-center gap-space-md"><img alt="Profile" class="w-10 h-10 rounded-full object-cover shrink-0 ring-2 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_iIuOeRHMuDs2XO7Wf0QGasfJRW26O0KRHJAJzNn4OsrgNK_Ruj7U1H3eEwhtSDAUhHV8NY0-U5ww0VqMZyx0zhoCXcFDhT2qrIIJfguEWmrLoHBkc0Qs95WsskS2JKAcPTD5LlYJipqV5HHth7xeQgHIXjKlMbAvfWwVYfh7Ufa55O-p6vNWkJWOI2VcYebyI0-oHW-p1xEOQzbaCXxCDVzjgUm-g4kJrDd-aGxC"/><div class="flex-1 min-w-0"><div class="flex items-center justify-between gap-1"><span class="font-headline-sm text-[15px] font-semibold text-on-surface truncate">Dr. Rajeshwar Sharma</span><button class="min-h-[32px] min-w-[32px] flex items-center justify-center text-outline hover:text-error transition-colors rounded-lg" type="button"><span class="material-symbols-outlined text-[18px]">logout</span></button></div><p class="font-body-sm text-body-sm text-on-surface-variant truncate">Chief General Manager (Geology)</p><p class="font-label-sm text-label-sm text-outline truncate">CMPDI HQ, Ranchi</p><div class="mt-2"><span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-secondary mr-1.5"></span>Verified Reviewer</span></div></div></div></div></aside><div class="pl-80 min-h-screen"><header class="fixed top-0 left-80 right-0 h-20 bg-surface/85 backdrop-blur-xl z-40 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter-lg flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-md min-w-0 max-w-xl"><div class="hidden xl:flex items-center gap-2 font-label-md text-label-md text-on-surface-variant shrink-0"><span class="text-outline font-medium">Coal India Limited</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="text-outline font-medium">CMPDI</span><span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span><span class="font-semibold text-primary truncate">Section Active</span></div><div class="relative flex-1"><div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-outline"><span class="material-symbols-outlined text-[20px]">search</span></div><input class="w-full min-h-[44px] pl-10 pr-4 bg-surface-container-low rounded-xl text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all shadow-[0_0_0_1px_rgba(115,118,134,0.15)] focus:shadow-[0_0_0_2px_#004ac6]" placeholder="Search 142,500+ drill cores, borehole logs, feasibility reports... (Press /)" type="text"/></div></div><div class="flex items-center gap-space-md shrink-0"><div class="hidden 2xl:flex items-center gap-2 px-3 py-1.5 bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm font-medium text-on-surface-variant">System Operational · Model v4.2 Geochem</span></div><button class="min-h-[44px] px-space-md inline-flex items-center gap-2 rounded-xl bg-primary text-on-primary font-headline-sm text-body-md hover:bg-primary-container transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[20px]">add</span><span>New Upload</span></button><div class="flex items-center gap-1"><button class="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">help_outline</span></button><button class="min-h-[44px] min-w-[44px] relative flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-error px-1 font-label-sm text-[10px] font-bold text-on-error">2</span></button></div><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0 ring-1 ring-surface-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_iIuOeRHMuDs2XO7Wf0QGasfJRW26O0KRHJAJzNn4OsrgNK_Ruj7U1H3eEwhtSDAUhHV8NY0-U5ww0VqMZyx0zhoCXcFDhT2qrIIJfguEWmrLoHBkc0Qs95WsskS2JKAcPTD5LlYJipqV5HHth7xeQgHIXjKlMbAvfWwVYfh7Ufa55O-p6vNWkJWOI2VcYebyI0-oHW-p1xEOQzbaCXxCDVzjgUm-g4kJrDd-aGxC"/></div></div></header><main class="relative w-full pt-20 px-gutter-lg py-gutter bg-surface"><div class="flex flex-col w-full pb-space-xl">
+<!-- Top Level Welcome & Master Operational Ribbon -->
+<section class="relative overflow-hidden rounded-2xl bg-surface-container-low p-space-lg shadow-sm mb-space-lg">
+<div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-primary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute right-72 -bottom-20 w-64 h-64 rounded-full bg-secondary-fixed/40 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col xl:flex-row xl:items-center justify-between gap-space-lg">
+<div class="space-y-space-xs max-w-3xl">
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold tracking-wide">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+            CMPDI Central Node Connected
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">sync</span>
+            Borehole Sync: Today, 08:30 AM
+          </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px]">corporate_fare</span>
+            Active Mining Leases: 418
+          </span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight pt-1">
+          Good morning, Dr. Rajeshwar Sharma
+        </h1>
+<p class="font-body-xl text-body-xl text-on-surface-variant font-normal leading-relaxed">
+          Here is an authoritative overview of your geological intelligence workspace across 8 Coal India subsidiaries and 342 active mines.
+        </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="flex flex-wrap items-center gap-space-sm shrink-0">
+<button class="min-h-[48px] px-space-lg inline-flex items-center gap-2 rounded-xl bg-primary text-on-primary font-headline-sm text-body-md hover:bg-primary-container transition-all shadow-sm focus:outline-none" type="button">
+<span class="material-symbols-outlined text-[20px]">upload_file</span>
+<span>Upload Geological Report</span>
+</button>
+<button class="min-h-[48px] px-space-md inline-flex items-center gap-2 rounded-xl bg-surface-container-lowest text-primary font-headline-sm text-body-md hover:bg-surface-container-high transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">psychology</span>
+<span>Ask AI Assistant</span>
+</button>
+<button class="min-h-[48px] px-space-md inline-flex items-center gap-2 rounded-xl bg-error-container text-on-error-container font-headline-sm text-body-md hover:opacity-90 transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span>Review 3 Conflicts</span>
+<span class="ml-1 px-1.5 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm font-bold">3</span>
+</button>
+</div>
+</div>
+</section>
+<!-- KPI Row: 4 Specialized Geological Metric Cards -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Total Documents -->
+<div class="flex flex-col justify-between p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline font-semibold">Repository Volume</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mt-1 tracking-tight">142,850</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium mt-0.5">Total Archived Documents</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">folder_copy</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm space-y-2">
+<div class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">arrow_upward</span>
+<span>+1,240 this month</span>
+</div>
+<div class="p-2 rounded-lg bg-surface-container-low font-label-sm text-label-sm text-on-surface-variant flex justify-between">
+<span>Logs: 68k</span>
+<span>·</span>
+<span>Feasibility: 42k</span>
+<span>·</span>
+<span>Prod: 32k</span>
+</div>
+</div>
+</div>
+<!-- Card 2: AI Processed -->
+<div class="flex flex-col justify-between p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">AI Automated Extraction</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mt-1 tracking-tight">138,420</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium mt-0.5">AI Indexed & Geocoded (96.9%)</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-secondary-container/40 flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm space-y-2">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-secondary font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+            OCR Precision 98.4%
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">High Confidence</span>
+</div>
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 96.9%"></div>
+</div>
+</div>
+</div>
+<!-- Card 3: Pending Verification -->
+<div class="flex flex-col justify-between p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-semibold">Workflow Governance</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mt-1 tracking-tight">3,840</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium mt-0.5">Pending Geologist Sign-off</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[24px]">pending_actions</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<div class="font-label-sm text-label-sm text-on-surface-variant">
+<span class="font-bold text-primary">42</span> assigned to your desk
+        </div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+          Review Queue <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: Discrepancies -->
+<div class="flex flex-col justify-between p-space-lg rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary-container font-semibold">Quality Validation</span>
+<h2 class="font-headline-xl text-headline-xl text-error mt-1 tracking-tight">590</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-medium mt-0.5">Cross-Report Discrepancies</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-error-container/50 flex items-center justify-center text-error group-hover:bg-error group-hover:text-on-error transition-colors">
+<span class="material-symbols-outlined text-[24px]">gpp_maybe</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold truncate max-w-[160px]">
+          3 Critical: Jharia & Raniganj
+        </span>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" href="#">
+          Resolve <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Category Shortcut Carousel/Pill Row -->
+<section class="mb-space-lg">
+<div class="flex items-center justify-between mb-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Frequently Accessed Repositories</h2>
+<span class="font-label-md text-label-md text-outline">CMPDI Central Geospatial Archive</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-high/40 cursor-pointer transition-all flex flex-col justify-between min-h-[96px]">
+<div class="flex items-center justify-between text-primary">
+<span class="material-symbols-outlined text-[22px]">description</span>
+<span class="material-symbols-outlined text-[16px] text-outline">north_east</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface truncate">Geological Reports</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">45,210 files</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-high/40 cursor-pointer transition-all flex flex-col justify-between min-h-[96px]">
+<div class="flex items-center justify-between text-secondary">
+<span class="material-symbols-outlined text-[22px]">precision_manufacturing</span>
+<span class="material-symbols-outlined text-[16px] text-outline">north_east</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface truncate">Mining Production</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">31,400 files</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-high/40 cursor-pointer transition-all flex flex-col justify-between min-h-[96px]">
+<div class="flex items-center justify-between text-tertiary">
+<span class="material-symbols-outlined text-[22px]">architecture</span>
+<span class="material-symbols-outlined text-[16px] text-outline">north_east</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface truncate">Core Drilling Logs</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">28,150 files</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-high/40 cursor-pointer transition-all flex flex-col justify-between min-h-[96px]">
+<div class="flex items-center justify-between text-secondary">
+<span class="material-symbols-outlined text-[22px]">eco</span>
+<span class="material-symbols-outlined text-[16px] text-outline">north_east</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface truncate">Env. Clearances</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">12,400 files</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-high/40 cursor-pointer transition-all flex flex-col justify-between min-h-[96px]">
+<div class="flex items-center justify-between text-primary">
+<span class="material-symbols-outlined text-[22px]">layers</span>
+<span class="material-symbols-outlined text-[16px] text-outline">north_east</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface truncate">Coal Seam Reserve</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">18,900 files</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm hover:bg-surface-container-high/40 cursor-pointer transition-all flex flex-col justify-between min-h-[96px]">
+<div class="flex items-center justify-between text-outline">
+<span class="material-symbols-outlined text-[22px]">history_edu</span>
+<span class="material-symbols-outlined text-[16px] text-outline">north_east</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-semibold text-on-surface truncate">Historical Archives</p>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">1975–2000 (6,790)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content Asymmetric 70/30 Split Canvas -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT COLUMN (70% - 8 Columns): Discrepancies & Live Ingestion Registry -->
+<div class="xl:col-span-8 flex flex-col gap-space-lg min-w-0">
+<!-- Critical Geological Discrepancy Callout Strip -->
+<div class="rounded-2xl p-space-lg bg-error-container/30 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-error text-on-error flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[22px]">emergency</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-error font-bold">Urgent Discrepancy Flagged</span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">Priority 1</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface mt-1 leading-snug">
+<strong>North Karanpura Seam IV</strong> thickness mismatch between CMPDI Regional Exploration Report 2023 (<span class="font-label-md text-label-md font-bold text-on-surface">14.2m</span>) vs CCL Production Log 2024 (<span class="font-label-md text-label-md font-bold text-error">11.8m</span>). Requires CGM validation before DGMS quarterly submission.
+            </p>
+</div>
+</div>
+<div class="shrink-0 flex items-center gap-space-sm w-full md:w-auto">
+<button class="min-h-[44px] px-space-md rounded-xl bg-error text-on-error font-headline-sm text-body-sm hover:opacity-90 transition-all shadow-sm w-full md:w-auto" type="button">
+            Resolve Conflict
+          </button>
+</div>
+</div>
+<!-- Recent Documents Table Card -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Real-Time Ingested Documents</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live feed of processed boreholes, geological cross-sections, and subsidiary reports</p>
+</div>
+<div class="flex items-center gap-2">
+<button class="min-h-[40px] px-3 py-1.5 rounded-xl bg-surface-container text-on-surface-variant font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">filter_list</span> Filter Subsidiary
+            </button>
+<button class="min-h-[40px] px-3 py-1.5 rounded-xl bg-surface-container text-primary font-label-md text-label-md flex items-center gap-1 hover:bg-surface-container-high transition-colors" type="button">
+              View All (142k)
+            </button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto -mx-space-lg px-space-lg">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-xl">Document Name & Borehole ID</th>
+<th class="py-3 px-4">Category</th>
+<th class="py-3 px-4">Mine & Subsidiary</th>
+<th class="py-3 px-4">Sync Date</th>
+<th class="py-3 px-4">Processing Status</th>
+<th class="py-3 px-4 text-right rounded-r-xl">Action</th>
+</tr>
+</thead>
+<tbody class="font-body-md text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-4 font-semibold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">picture_as_pdf</span>
+<div>
+<span class="text-on-surface block truncate max-w-xs font-medium">Borehole Core Lithology Log BH-SECL-2024-88</span>
+<span class="font-label-sm text-label-sm text-outline font-normal">CMPDI-RI-V-BILASPUR · 32 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Core Log</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="truncate max-w-[150px]">
+<span class="font-semibold text-on-surface block">Kusmunda OCP</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">SECL Subsidiary</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                  Today, 07:15 AM
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Processed
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="min-h-[36px] px-2.5 py-1 rounded-lg text-primary hover:bg-surface-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                      Extract
+                    </button>
+<button class="min-h-[36px] w-9 flex items-center justify-center rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-4 font-semibold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">layers</span>
+<div>
+<span class="text-on-surface block truncate max-w-xs font-medium">Stratigraphic Cross-Section Amritdhara Upper Seam</span>
+<span class="font-label-sm text-label-sm text-outline font-normal">CMPDI-RI-IV-NAGPUR · 48 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Stratigraphy</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="truncate max-w-[150px]">
+<span class="font-semibold text-on-surface block">Amritdhara Seam</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">WCL Subsidiary</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                  Yesterday, 18:40
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> OCR Complete
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="min-h-[36px] px-2.5 py-1 rounded-lg text-primary hover:bg-surface-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                      Extract
+                    </button>
+<button class="min-h-[36px] w-9 flex items-center justify-center rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-4 font-semibold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[20px]">warning</span>
+<div>
+<span class="text-on-surface block truncate max-w-xs font-medium">Borehole Log MD-UG-09 Methane Drainage</span>
+<span class="font-label-sm text-label-sm text-outline font-normal">CMPDI-RI-II-DHANBAD · 16 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Gas Desorption</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="truncate max-w-[150px]">
+<span class="font-semibold text-on-surface block">Moonidih UG Mine</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">BCCL Subsidiary</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                  24 Oct 2024
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span> Review Required
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="min-h-[36px] px-2.5 py-1 rounded-lg text-error hover:bg-error-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                      Compare
+                    </button>
+<button class="min-h-[36px] w-9 flex items-center justify-center rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/50 transition-colors group">
+<td class="py-3.5 px-4 font-semibold">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment</span>
+<div>
+<span class="text-on-surface block truncate max-w-xs font-medium">Ashok Extension Geological Feasibility Vol. 2</span>
+<span class="font-label-sm text-label-sm text-outline font-normal">CMPDI-RI-III-RANCHI · 104 MB</span>
+</div>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center px-2 py-0.5 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface-variant">Feasibility</span>
+</td>
+<td class="py-3.5 px-4">
+<div class="truncate max-w-[150px]">
+<span class="font-semibold text-on-surface block">Ashok OCP</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">CCL Subsidiary</span>
+</div>
+</td>
+<td class="py-3.5 px-4 font-label-sm text-label-sm text-on-surface-variant whitespace-nowrap">
+                  23 Oct 2024
+                </td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Processed
+                  </span>
+</td>
+<td class="py-3.5 px-4 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="min-h-[36px] px-2.5 py-1 rounded-lg text-primary hover:bg-surface-container font-label-md text-label-md font-semibold transition-colors" type="button">
+                      Extract
+                    </button>
+<button class="min-h-[36px] w-9 flex items-center justify-center rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination & Footer meta -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-md mt-space-md text-on-surface-variant font-label-sm text-label-sm">
+<span>Showing 4 of 1,240 records uploaded in October 2024</span>
+<div class="flex items-center gap-2">
+<button class="min-h-[36px] px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" type="button">Previous</button>
+<span class="px-2 font-bold text-on-surface">Page 1 of 310</span>
+<button class="min-h-[36px] px-3 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors" type="button">Next</button>
+</div>
+</div>
+</div>
+<!-- Geological Visual Feature: Stratigraphic Model Preview -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">scatter_plot</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Subsurface Stratigraphic Correlation</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-semibold">CMPDI Regional Model v4.2</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-sm">
+<!-- Strata Column 1 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline font-semibold">0m - 42m (Alluvium)</span>
+<div class="h-10 rounded-lg bg-tertiary-fixed-dim/40 flex items-center px-3 font-label-sm text-label-sm font-bold text-on-tertiary-fixed">
+              Sandstone & Soil
+            </div>
+<span class="font-label-sm text-[10px] text-outline">Density: 2.1 g/cm³</span>
+</div>
+<!-- Strata Column 2 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline font-semibold">42m - 110m (Seam I)</span>
+<div class="h-14 rounded-lg bg-inverse-surface flex items-center px-3 font-label-sm text-label-sm font-bold text-inverse-on-surface">
+              Seam I (Bituminous, 8.4m)
+            </div>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Ash: 18.2% · GCV: 5400</span>
+</div>
+<!-- Strata Column 3 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline font-semibold">110m - 195m (Interburden)</span>
+<div class="h-12 rounded-lg bg-surface-variant flex items-center px-3 font-label-sm text-label-sm font-bold text-on-surface-variant">
+              Carbonaceous Shale
+            </div>
+<span class="font-label-sm text-[10px] text-outline">RQD: 72% (Competent)</span>
+</div>
+<!-- Strata Column 4 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-outline font-semibold">195m - 280m (Seam II Thick)</span>
+<div class="h-16 rounded-lg bg-inverse-surface flex items-center px-3 font-label-sm text-label-sm font-bold text-inverse-on-surface relative overflow-hidden">
+<div class="absolute right-1 top-1 px-1 bg-secondary text-on-secondary rounded text-[9px]">High Grade</div>
+              Seam II (Thick, 14.8m)
+            </div>
+<span class="font-label-sm text-[10px] text-secondary font-semibold">Ash: 14.5% · Coking Coal</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN (30% - 4 Columns): Visual Ingestion Chart, AI Quick Q&A, and Audit Pulse -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Visual Activity Chart: Ingestion Velocity -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center justify-between mb-space-sm">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Archive Ingestion Velocity</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monthly borehole & survey logs</p>
+</div>
+<span class="inline-flex items-center gap-1 text-secondary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +14.2% YoY
+          </span>
+</div>
+<!-- Inline SVG 12-Month Ingestion Chart -->
+<div class="w-full pt-4">
+<svg class="w-full h-36 overflow-visible" preserveaspectratio="none" viewbox="0 0 320 120">
+<defs>
+<lineargradient id="barGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#004ac6" stop-opacity="0.85"></stop>
+<stop offset="100%" stop-color="#dee8ff" stop-opacity="0.4"></stop>
+</lineargradient>
+</defs>
+<!-- Chart Gridlines -->
+<line stroke="#d8e3fb" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="20" y2="20"></line>
+<line stroke="#d8e3fb" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="60" y2="60"></line>
+<line stroke="#d8e3fb" stroke-dasharray="3,3" stroke-width="1" x1="0" x2="320" y1="100" y2="100"></line>
+<!-- 12 Bars -->
+<rect fill="#cfdaf2" height="45" rx="3" width="16" x="8" y="55"></rect>
+<rect fill="#cfdaf2" height="52" rx="3" width="16" x="34" y="48"></rect>
+<rect fill="#cfdaf2" height="38" rx="3" width="16" x="60" y="62"></rect>
+<rect fill="#cfdaf2" height="60" rx="3" width="16" x="86" y="40"></rect>
+<rect fill="#cfdaf2" height="68" rx="3" width="16" x="112" y="32"></rect>
+<rect fill="#cfdaf2" height="75" rx="3" width="16" x="138" y="25"></rect>
+<rect fill="#cfdaf2" height="70" rx="3" width="16" x="164" y="30"></rect>
+<rect fill="#cfdaf2" height="80" rx="3" width="16" x="190" y="20"></rect>
+<rect fill="#cfdaf2" height="84" rx="3" width="16" x="216" y="16"></rect>
+<rect fill="#cfdaf2" height="78" rx="3" width="16" x="242" y="22"></rect>
+<rect fill="url(#barGrad)" height="88" rx="3" width="16" x="268" y="12"></rect>
+<rect fill="#004ac6" height="94" rx="3" width="16" x="294" y="6"></rect>
+</svg>
+<div class="flex justify-between text-outline font-label-sm text-[10px] mt-2 tracking-wider">
+<span>NOV</span>
+<span>JAN</span>
+<span>MAR</span>
+<span>MAY</span>
+<span>JUL</span>
+<span>SEP</span>
+<span class="text-primary font-bold">OCT '24</span>
+</div>
+</div>
+<div class="mt-space-md p-space-sm rounded-xl bg-surface-container-low flex items-center justify-between text-on-surface">
+<div>
+<span class="font-label-sm text-label-sm text-outline block">Total Ingested (Oct)</span>
+<span class="font-headline-sm text-headline-sm font-semibold">14,280 files</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+            Capacity 88%
+          </span>
+</div>
+</div>
+<!-- AI Quick Inquirer Widget -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col">
+<div class="flex items-center gap-2 mb-space-sm">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">smart_toy</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">AI Quick Inquirer</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Ask geological & reserve questions</p>
+</div>
+</div>
+<div class="relative mt-2">
+<input class="w-full min-h-[48px] pl-4 pr-11 bg-surface-container-low rounded-xl text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all shadow-[0_0_0_1px_rgba(115,118,134,0.15)] focus:shadow-[0_0_0_2px_#004ac6]" placeholder="Ask across all CIL documents..." type="text"/>
+<button class="absolute right-1.5 top-1.5 min-h-[36px] min-w-[36px] bg-primary text-on-primary rounded-lg flex items-center justify-center hover:bg-primary-container transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">send</span>
+</button>
+</div>
+<div class="mt-space-sm">
+<span class="font-label-sm text-label-sm text-outline font-semibold mb-2 block uppercase tracking-wider">Suggested Queries</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm transition-colors text-left truncate max-w-full" type="button">
+              ⚡ Total reserve in Gevra OCP
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm transition-colors text-left truncate max-w-full" type="button">
+              ⛏️ Stripping ratios ECL Seam IV
+            </button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm transition-colors text-left truncate max-w-full" type="button">
+              🔍 Core log CMPD-2024-NK-45
+            </button>
+</div>
+</div>
+</div>
+<!-- Live Audit Pulse Mini Feed -->
+<div class="rounded-2xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col flex-1">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">rss_feed</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Live Audit Pulse</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Real-time</span>
+</div>
+<div class="space-y-space-md">
+<!-- Item 1 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container/50 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-body-sm text-body-sm text-on-surface leading-tight">
+<strong>S. Sen</strong> (Sr. Geologist) verified Core Sample Log <span class="font-label-sm text-label-sm font-semibold text-primary">BH-98</span>
+</p>
+<span class="font-label-sm text-label-sm text-outline">4 mins ago · CMPDI RI-II</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">auto_awesome</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-body-sm text-body-sm text-on-surface leading-tight">
+<strong>AI Assistant</strong> generated Executive Stratigraphy Summary for Piparwar OCP Expansion
+              </p>
+<span class="font-label-sm text-label-sm text-outline">22 mins ago · Autonomous v4.2</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-start gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">rule</span>
+</div>
+<div class="min-w-0 flex-1">
+<p class="font-body-sm text-body-sm text-on-surface leading-tight">
+<strong>Ananya Roy</strong> flagged seam correlation conflict in <span class="font-label-sm text-label-sm font-semibold text-error">Raniganj Block 7</span>
+</p>
+<span class="font-label-sm text-label-sm text-outline">1 hour ago · Eastern Coalfields</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md mt-auto">
+<a class="w-full min-h-[40px] px-3 py-2 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface text-center font-label-md text-label-md font-semibold flex items-center justify-center gap-1 transition-colors" href="#">
+<span>View Complete Audit Ledger</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>
