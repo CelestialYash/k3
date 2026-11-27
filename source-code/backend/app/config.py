@@ -1,9 +1,15 @@
 """Application configuration loaded from environment variables."""
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Base directories
 BASE_DIR = Path(__file__).resolve().parent.parent
+ROOT_DIR = BASE_DIR.parent
+
+# Load .env from either source-code/.env or source-code/backend/.env
+load_dotenv(ROOT_DIR / ".env")
+load_dotenv(BASE_DIR / ".env")
 DATA_DIR = BASE_DIR / "data"
 DOCUMENTS_DIR = DATA_DIR / "documents"
 FAISS_DIR = DATA_DIR / "faiss_index"
